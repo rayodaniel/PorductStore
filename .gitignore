@@ -1,0 +1,14 @@
+# Dependencias
+/node_modules
+/.pnp
+.pnp.js
+
+# Archivos de entorno
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de construcción
+/.next
+/out

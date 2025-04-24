@@ -3,7 +3,7 @@ import axios from "axios"; // Importa desde el mismo módulo
 import { ApiResponse } from "@/shared/client-http/client-http-config";
 import { Product } from "@/shared/models/products/products";
 
-const baseApi = process.env.NEXT_PUBLIC_API_URL;
+const baseApi = process.env.NEXT_PUBLIC_API_URL || "https://fakestoreapi.com";
 
 export const useProductsApi = () => {
 
