@@ -1,0 +1,40 @@
+'use client';
+
+import './globals.css';
+import { Bebas_Neue, Roboto } from 'next/font/google';
+
+import Header from './templates/header/header';
+
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bebas-neue', // Define la variable
+});
+export const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-roboto', // Define la variable
+});
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+    className={roboto.className}
+    >
+      <head lang="es" className={roboto.className} />
+
+      <body className={`flex flex-col min-h-screen antialiased`} >
+        <main className="bg-white flex-grow">
+          <Header />
+          {children}
+          <div />
+        </main>
+      </body>
+
+    </html>
+  );
+}
