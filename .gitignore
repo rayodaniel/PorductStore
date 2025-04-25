@@ -12,3 +12,4 @@
 # Archivos de construcción
 /.next
 /out
+*storybook.log

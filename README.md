@@ -5,6 +5,13 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-✓-06B6D4?logo=tailwindcss)
 ![RxJS](https://img.shields.io/badge/RxJS-✓-B7178C?logo=reactivex)
 
+##  :fa-info: Importante !!
+### Al cargar imagenes deben de ser de estos proveedores
+- fakestoreapi.com
+- images.pexels.com
+- www.shutterstock.com
+
+
 ## 📋 Descripción
 
 Proyecto moderno desarrollado con:
@@ -23,7 +30,7 @@ Proyecto moderno desarrollado con:
 
 1. **Clonar repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/tu-proyecto.git
+   git clone https://github.com/rayodaniel/PorductStore.git
    cd tu-proyecto```
    
 2. **Then, install the dependencies:**
