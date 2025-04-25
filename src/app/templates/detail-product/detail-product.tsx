@@ -47,7 +47,6 @@ export default function Detail() {
                 />
             );
         }
-
         return product.productById ? (
             <DetailProductCard
                 onClickUpdate={onHandleUpdate}
