@@ -1,4 +1,5 @@
 import { AxiosError } from "axios";
+import { toast } from 'react-toastify';
 
 import { useProductsApi } from "@/core/apis";
 import { useProductsObservable } from "@/core/state/products/useProductsState";
@@ -109,6 +110,10 @@ export const useProductsRepository = () => {
     try {
       todoObservable.creating(true);
       const createdTodo = await handleAxiosApi<Product>(todoApi.create(product));
+      toast.success('¡Producto creado correctamente!', {
+        position: "top-right",
+        autoClose: 3000,
+      });
       todoObservable.create(createdTodo);
     } catch (error: AxiosError) {
       todoObservable.error(error.message as string);
@@ -127,6 +132,10 @@ export const useProductsRepository = () => {
     try {
       todoObservable.updating(true);
       const updatedProduct = await handleAxiosApi<Product>(todoApi.update(id, product));
+      toast.success('¡Producto actualizado correctamente!', {
+        position: "top-right",
+        autoClose: 3000,
+      });
       todoObservable.update(id, updatedProduct);
     } catch (error: AxiosError) {
       todoObservable.error(error.message as string);

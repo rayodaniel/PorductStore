@@ -509,11 +509,13 @@ var { g: global, __dirname } = __turbopack_context__;
 __turbopack_context__.s({
     "useProductsRepository": (()=>useProductsRepository)
 });
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-toastify/dist/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$core$2f$apis$2f$index$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/src/core/apis/index.ts [app-ssr] (ecmascript) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$core$2f$apis$2f$products$2f$useProductsApi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/core/apis/products/useProductsApi.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$core$2f$state$2f$products$2f$useProductsState$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/core/state/products/useProductsState.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$shared$2f$handle$2d$axios$2f$handle$2d$axiosApi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/shared/handle-axios/handle-axiosApi.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$shared$2f$providers$2f$categories$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/shared/providers/categories.ts [app-ssr] (ecmascript)");
+;
 ;
 ;
 ;
@@ -593,6 +595,10 @@ const useProductsRepository = ()=>{
         try {
             todoObservable.creating(true);
             const createdTodo = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$shared$2f$handle$2d$axios$2f$handle$2d$axiosApi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["handleAxiosApi"])(todoApi.create(product));
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('¡Producto creado correctamente!', {
+                position: "top-right",
+                autoClose: 3000
+            });
             todoObservable.create(createdTodo);
         } catch (error) {
             todoObservable.error(error.message);
@@ -610,6 +616,10 @@ const useProductsRepository = ()=>{
         try {
             todoObservable.updating(true);
             const updatedProduct = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$shared$2f$handle$2d$axios$2f$handle$2d$axiosApi$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["handleAxiosApi"])(todoApi.update(id, product));
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('¡Producto actualizado correctamente!', {
+                position: "top-right",
+                autoClose: 3000
+            });
             todoObservable.update(id, updatedProduct);
         } catch (error) {
             todoObservable.error(error.message);
@@ -1298,11 +1308,11 @@ function Detail() {
             product: product.productById
         }, void 0, false, {
             fileName: "[project]/src/app/templates/detail-product/detail-product.tsx",
-            lineNumber: 52,
+            lineNumber: 51,
             columnNumber: 13
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$molecules$2f$skeleton$2f$skeleton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
             fileName: "[project]/src/app/templates/detail-product/detail-product.tsx",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 13
         }, this);
     };
@@ -1310,7 +1320,7 @@ function Detail() {
         children: renderContent()
     }, void 0, false, {
         fileName: "[project]/src/app/templates/detail-product/detail-product.tsx",
-        lineNumber: 61,
+        lineNumber: 60,
         columnNumber: 12
     }, this);
 }
