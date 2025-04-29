@@ -1,17 +1,12 @@
 'use client';
 
 import './globals.css';
-import { Bebas_Neue, Roboto } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
 import Header from './templates/header/header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const bebasNeue = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-bebas-neue', // Define la variable
-});
 
 export const roboto = Roboto({
   weight: '400',

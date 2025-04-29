@@ -29,7 +29,7 @@ export default function DetailProduct({
 
     useEffect(() => {
         initDetailProduct.getProductById(Number(id));
-    }, []);
+    }, );
 
     return (
         <section className="flex flex-col justify-center items-center w-full h-screen bg-gray-100">

@@ -8,22 +8,14 @@ import { Product, ProductState } from '@/shared/models/products/products';
 
 import DetailProductCard from '../../organims/detail-product-card/detail-product-card';
 import UpdateProduct from '../../organims/update-product/update-product';
+import { useProductSubscription } from '@/shared/custom-hooks/useProduct';
 
 export default function Detail() {
-    const [product, setProduct] = useState<ProductState>({} as ProductState);
     const [update, setUpdate] = useState<boolean>(false);
 
     const useUpdateProduct = useProductsRepository();
 
-    useEffect(() => {
-        const subscriptionProduct = useProductsRepository()
-            .getProductsObservable()
-            .subscribe((value) => {
-                setProduct(value);
-            });
-
-        return () => subscriptionProduct.unsubscribe();
-    }, []);
+    const currentProduct = useProductSubscription();
 
     const onHandleUpdate = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -36,21 +28,21 @@ export default function Detail() {
     };
 
     const renderContent = () => {
-        if (product.load) return <Skeleton />;
-        if (product.error) return <div className="text-red-500">Error: {product.error}</div>;
+        if (currentProduct.isLoading) return <Skeleton />;
+        if (currentProduct.error) return <div className="text-red-500">Error: {currentProduct.error}</div>;
 
         if (update) {
             return (
                 <UpdateProduct
                     handleSubmit={onUpdate}
-                    product={product.productById}
+                    product={currentProduct.productById!}
                 />
             );
         }
-        return product.productById ? (
+        return currentProduct.productById ? (
             <DetailProductCard
                 onClickUpdate={onHandleUpdate}
-                product={product.productById}
+                product={currentProduct.productById}
             />
         ) : (
             <Skeleton />

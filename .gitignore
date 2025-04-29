@@ -12,4 +12,16 @@
 # Archivos de construcción
 /.next
 /out
+.next/cache
+# Archivos de configuración
+/.env
+# Archivos de configuración de Storybook
+/.storybook/manager-ipc.json
+/.storybook/preview-ipc.json
+/.storybook/preview-head.html
+/.storybook/preview-body.html
+/.storybook/preview-head-manager.html
+# Archivos de caché
+/.cache
+# Archivos de registro      
 *storybook.log

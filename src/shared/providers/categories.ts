@@ -16,7 +16,6 @@ export function adapterAllCategories(products: Product[]): { category: string}[]
         return acc;
       }, []);
 
-      console.log("categories", categories);
       
 
       return categories;

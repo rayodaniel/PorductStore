@@ -1,6 +1,5 @@
 import ROUTES from "@/shared/providers/routers";
 import { useRouter } from "next/navigation";
-import { Roboto } from 'next/font/google';
 import { roboto } from "@/app/layout";
 
 

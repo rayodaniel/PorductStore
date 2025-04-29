@@ -54,3 +54,5 @@ export type ErrorState = {
   export type ErrorPayload = {
     error: string;
   }
+
+  export type ProductHook =  'product' | 'category' | 'filterCategories' |'productById' ;

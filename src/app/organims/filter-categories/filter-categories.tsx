@@ -2,33 +2,26 @@ import { useEffect, useState } from 'react';
 
 import CheckLabel from '@/app/molecules/check-label/check-label';
 import { useProductsRepository } from '@/core/repositories/products/useProductsRepository';
-import { Categories } from '@/shared/models/products/products';
+import { useProductSubscription } from '@/shared/custom-hooks/useProduct';
 
 export default function FilterCategories() {
-    const [category, setCategory] = useState<Categories[]>([]);
+    const repository = useProductsRepository();
 
-    useEffect(() => {
-        const subscription = useProductsRepository()
-            .getProductsObservable()
-            .subscribe((value) => {
-                setCategory(value.category);
-            });
-
-        return () => subscription.unsubscribe();
-    }, []);
+    const currentProduct = useProductSubscription();
 
     const handleChange = (check: boolean, name: string) => {
-        const repository = useProductsRepository();
         check ? repository.addFilterCategory(name) : repository.deleteFilterCategory(name);
     };
-    if (!category) {
-        return null;
-        
+    const noData = () =>{
+        return <div className="text-red-500">No se encuentran registros</div> ;
     }
 
-    return (
+
+
+    return !currentProduct.category ? noData() :
+     (
         <section className=" grid  md:grid-cols-4 place-items-center justify-around gap-4 mt-10">
-            {category.map((cat, index) => (
+            {currentProduct.category.map((cat, index) => (
                 <CheckLabel
                     text={cat.category}
                     id={cat.category}

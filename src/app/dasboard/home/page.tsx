@@ -28,7 +28,6 @@ import { useProductsRepository } from "@/core/repositories/products/useProductsR
 import Button from "@/app/atoms/button/button";
 import { useRouter } from "next/navigation";
 import ROUTES from "@/shared/providers/routers";
-import { ActivedManageState } from "@/shared/providers/manageState";
 
 export default function Home() {
     const initProducts = useProductsRepository();
@@ -41,7 +40,7 @@ export default function Home() {
             initProducts.listProduct();
         }
         
-    }, []);
+    }, );
     const handleCardClick = () => {
         router.push(ROUTES.CREATE);
     };

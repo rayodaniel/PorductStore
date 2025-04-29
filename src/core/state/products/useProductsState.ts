@@ -97,7 +97,7 @@ export const useProductsObservable = () => {
    * @param productUpdate - The updated product data.
    */
   const update = (id: number, productUpdate: Product) => {
-    let product = [...todoSubject.getValue().product];
+    const product = [...todoSubject.getValue().product];
     const updateListProduct = product.map((item) => {
       if (item.id === id) {
         return {...productUpdate };
@@ -105,7 +105,6 @@ export const useProductsObservable = () => {
       return item;
     });
 
-    console.log("updateListProduct", updateListProduct);
     
 
     setNextState({ productById: productUpdate, product:updateListProduct, error: "" })
