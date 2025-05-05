@@ -1,5 +1,4 @@
 {
-  "/dasboard/detail-product/[id]/page": "app/dasboard/detail-product/[id]/page.js",
   "/dasboard/home/page": "app/dasboard/home/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
